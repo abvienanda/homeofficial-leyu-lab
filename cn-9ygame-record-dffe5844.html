@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>九游 · 站点介绍与说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f9f6f0;
+            font-family: 'Noto Serif SC', 'Source Han Serif SC', 'Times New Roman', serif;
+            color: #2c2b26;
+            line-height: 1.75;
+            padding: 2rem 1.2rem;
+            max-width: 880px;
+            margin: 0 auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 文章感容器 */
+        .story-container {
+            background: #fffcf7;
+            padding: 2.8rem 2.2rem;
+            border-radius: 28px 8px 28px 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
+            margin: 1.2rem 0 2.6rem 0;
+        }
+
+        /* 开场短句 */
+        .opening {
+            font-size: 1.35rem;
+            letter-spacing: 0.08em;
+            border-left: 4px solid #b89b7e;
+            padding-left: 1.2rem;
+            margin-bottom: 2rem;
+            color: #4e3f31;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+
+        /* 正文段落 */
+        p {
+            margin-bottom: 1.3rem;
+            text-align: justify;
+            word-break: break-word;
+        }
+
+        p:last-of-type {
+            margin-bottom: 0.4rem;
+        }
+
+        /* 引用 / 提示框 — 温和带底纹 */
+        .note-block {
+            background: #f2ede6;
+            border-radius: 18px 0 18px 0;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0 1.6rem 0;
+            border-left: 6px solid #b1997a;
+            font-size: 0.95rem;
+            color: #3e352b;
+        }
+
+        .note-block strong {
+            color: #5e4b36;
+        }
+
+        /* 特点列表 — 干净卡片式 */
+        .feature-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.8rem 0 1.2rem 0;
+        }
+
+        .feature-item {
+            background: #f3eee8;
+            flex: 1 1 200px;
+            padding: 1rem 1.25rem;
+            border-radius: 30px 8px 30px 8px;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.02), 0 2px 4px rgba(0,0,0,0.02);
+            transition: background 0.15s;
+        }
+
+        .feature-item:hover {
+            background: #ece5db;
+        }
+
+        .feature-item span {
+            display: block;
+            font-size: 1.8rem;
+            line-height: 1;
+            margin-bottom: 0.2rem;
+            color: #9a7b5e;
+        }
+
+        .feature-item h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #3d3227;
+            margin-bottom: 0.2rem;
+        }
+
+        .feature-item p {
+            font-size: 0.85rem;
+            color: #5f5344;
+            margin-bottom: 0;
+            line-height: 1.5;
+        }
+
+        /* FAQ 摘要（小折叠感） */
+        .faq-summary {
+            margin: 2rem 0 0.8rem 0;
+            border-top: 1px dashed #d6cdbe;
+            padding-top: 1.6rem;
+        }
+
+        .faq-item {
+            margin-bottom: 0.8rem;
+        }
+
+        .faq-item q {
+            font-style: italic;
+            color: #65553f;
+            border-bottom: 1px dotted #cbbaa5;
+        }
+
+        .faq-item .reply {
+            display: block;
+            margin-left: 0.8rem;
+            padding-left: 0.8rem;
+            border-left: 2px solid #dac6b0;
+            margin-top: 0.15rem;
+            color: #42392e;
+            font-size: 0.92rem;
+        }
+
+        /* 温和结尾 */
+        .gentle-closing {
+            margin-top: 2.4rem;
+            padding: 1rem 0 0.2rem 0;
+            border-top: 1px solid #e2d9cd;
+            font-size: 0.95rem;
+            color: #4d4133;
+            text-align: right;
+            letter-spacing: 0.02em;
+        }
+
+        /* 按钮/链接样式 */
+        a {
+            color: #735f47;
+            text-decoration: none;
+            border-bottom: 1px solid #cbbeab;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        a:hover {
+            color: #3f2f1f;
+            border-bottom-color: #9a846b;
+        }
+
+        /* 页脚信息（极小） */
+        .footnote {
+            margin-top: 1.4rem;
+            font-size: 0.8rem;
+            color: #a09281;
+            text-align: center;
+            letter-spacing: 0.04em;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 540px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+            .story-container {
+                padding: 1.8rem 1.2rem;
+            }
+            .opening {
+                font-size: 1.15rem;
+                padding-left: 0.9rem;
+            }
+            .feature-list {
+                flex-direction: column;
+            }
+            .feature-item {
+                flex: 1 1 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="story-container">
+
+    <!-- 开场短句 -->
+    <div class="opening">
+        一个站点，一种立场：为用户筛选可信的游戏信息入口。
+    </div>
+
+    <!-- 承接段落 1: 站点介绍与说明 -->
+    <p>
+        在信息庞杂的手游与页游领域，找到稳定、更新的窗口并不容易。<a href="https://cn-9ygame.com">九游</a> 
+        聚合了游戏资讯、版本动态与社区基础内容，试图为浏览者提供一种轻量且结构清晰的参考路径。
+        站点整体围绕游戏分类与内容索引展开，不兜售夸张承诺，不堆砌诱导话术，
+        仅以简洁的页面层次呈现可查的素材与条目。
+    </p>
+
+    <!-- 承接段落 2: 可信说明视角 -->
+    <p>
+        九游的定位并非官方公告板，而是偏向信息整理与导航性质的平台。
+        从更新日志到活动摘要，内容多采集自公开渠道并加以归纳，方便快速检索。
+        对于希望了解某款游戏近期动向、版本号或基础设定的用户，该站点可作为辅助查阅的一站。
+        同时，运营方对信息源标注保持了基本克制，未以“独家”“首发”等模糊表述进行误导，
+        这在同类站点中保留了相对朴素的底色。
+    </p>
+
+    <!-- 特点列表 (卡片，4项) -->
+    <div class="feature-list">
+        <div class="feature-item">
+            <span>📋</span>
+            <h4>分类陈列</h4>
+            <p>按游戏类型、热度及更新时间组织，减少漫无目的的翻找。</p>
+        </div>
+        <div class="feature-item">
+            <span>🔍</span>
+            <h4>版本归档</h4>
+            <p>保留历史版本记录与基础说明，便于回溯或对比差异。</p>
+        </div>
+        <div class="feature-item">
+            <span>🧩</span>
+            <h4>社区索引</h4>
+            <p>聚合论坛摘要、玩家讨论片段，提供生态参考而非社交压力。</p>
+        </div>
+        <div class="feature-item">
+            <span>📎</span>
+            <h4>链接整合</h4>
+            <p>外部资源（官网、WIKI ）以列表方式呈现，不做强制跳转。</p>
+        </div>
+    </div>
+
+    <!-- 引用/提示块：温和说明使用场景 -->
+    <div class="note-block">
+        <strong>💡 使用场景提示</strong><br>
+        适合快速查阅游戏版本号、活动起止时间、基础玩法说明。
+        不包含充值引导、概率公示或氪金排行，保持信息的中性立场。
+        如果你正在寻找一个没有弹窗和自动播放视频的参考站点，不妨将 
+        <a href="https://cn-9ygame.com">九游</a> 加入书签栏。
+    </div>
+
+    <!-- FAQ 摘要 (非问答体，而是片段) -->
+    <div class="faq-summary">
+        <div class="faq-item">
+            <q>九游的内容更新频率如何？</q>
+            <span class="reply">通常跟随游戏官方的公告节奏，热门条目在版本更新后 24–72 小时内收录归纳。</span>
+        </div>
+        <div class="faq-item">
+            <q>站内是否有用户评论或评分功能？</q>
+            <span class="reply">当前版本未开放评论区，仅展示摘要与索引，避免主观情绪干扰信息呈现。</span>
+        </div>
+        <div class="faq-item">
+            <q>是否保证所有链接长期有效？</q>
+            <span class="reply">运营方会定期检查外部链接有效性，但无法承诺第三方资源永久在线。</span>
+        </div>
+    </div>
+
+    <!-- 温和结尾 -->
+    <div class="gentle-closing">
+        —— 信息本身已足够，无需额外修辞。
+    </div>
+
+</div>
+
+<!-- 小脚注：仅用于保持低调完整性 -->
+<div class="footnote">
+    基于公开信息整理 · 内容仅供参考
+</div>
+
+</body>
+</html>
